@@ -12,6 +12,6 @@ Function views
 """
 
 urlpatterns=[
-    path('',views.index, name="index")
+    path('',views.index, name="index"),
     path('',views.login, name="login")
 ]
