@@ -159,18 +159,21 @@ input[type="button"]:hover{
 
 
 
-.irmercado input[type="button"]{
+
+.irmercado button {
     margin-top: 25px;
     color: white;
     background: #1B1A55;
-    
+    border: none;
+    border-radius: 20px; /* Valor alto para hacerlo redondo */
+    padding: 15px 30px; /* Ajusta el padding para aumentar el tamaño */
+    font-size: 18px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background 0.3s ease; /* Transición suave para el color de fondo */
 }
 
-.shopname{
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-left: 50px;
-
+.irmercado button:hover {
+    background: #222; /* Cambia el color de fondo al pasar el cursor */
 }
 
 .shopvideo img{

@@ -94,7 +94,7 @@ $(document).ready(function () {
 
   $('#btnpagodirecto').click(function () {
 
-    window.location.href = "{% url 'ventanaPago' %}";
+    window.location.href = "ventanaPago.html";
 
   });
 
@@ -118,6 +118,13 @@ $(document).ready(function () {
 
 });
 });
+
+
+var btnIrMercado = document.getElementById('btnirmercado');
+        
+btnIrMercado.addEventListener('click', function() {
+    // Redirige hacia la vista 'productos' en Django
+    window.location.href = "{% url 'productos' %}";})
 
 
 
