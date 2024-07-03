@@ -32,7 +32,7 @@ $(document).ready(function () {
     $('#correo').val('');
     $('#password').val('');
 
-    window.location.href = 'login.html';
+    window.location.href = "{% url 'login' %}";
   });
 
 
@@ -45,7 +45,7 @@ $(document).ready(function () {
 
     if (usuarioGuardado && usuarioGuardado.correo === username && usuarioGuardado.password === password) {
       alert("Inicio de sesión exitoso!");
-      window.location.href = 'gustos.html';
+      window.location.href = "{% url 'ventanaPago' %}";
     } else {
       alert("Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.");
     }
@@ -94,13 +94,13 @@ $(document).ready(function () {
 
   $('#btnpagodirecto').click(function () {
 
-    window.location.href = 'VentanaPago.html';
+    window.location.href = "{% url 'ventanaPago' %}";
 
   });
 
   $('#pagarcarrito').click(function () {
 
-    window.location.href = 'VentanaPago.html';
+    window.location.href = "{% url 'ventanaPago' %}";
 
   });
   $(document).ready(function () {
@@ -115,8 +115,11 @@ $(document).ready(function () {
  //https://dragonball-api.com/api/characters/1
 //CREAR FUNCION PARA RECOJER DATOS DE LA API, Y MODIFICAR EL NUMERO PARA CAMBIAR PERSONAJE
 
+
 });
 });
+
+
 
 
 
