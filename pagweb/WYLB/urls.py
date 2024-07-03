@@ -13,10 +13,10 @@ Function views
 
 urlpatterns=[
     path('',views.index, name="index"),
-    path('login.html/',views.login, name="login"),
-    path('registro.html/',views.registro, name="registro"),
-    path('gustos.html/',views.gustos, name="gustos"),
-    path('productos.html/',views.productos, name="productos"),
-    path('productoU.html/',views.productoU, name="productoU"),
-    path('ventanaPago.html/',views.ventanaPago, name="ventanaPago"),
+    path('login',views.login, name="login"),
+    path('registro',views.registro, name="registro"),
+    path('gusto',views.gusto, name="gusto"),
+    path('productos',views.productos, name="productos"),
+    path('productoU',views.productoU, name="productoU"),
+    path('ventanaPago',views.ventanaPago, name="ventanaPago"),
 ]

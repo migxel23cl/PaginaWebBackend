@@ -1,18 +1,17 @@
 from django.shortcuts import render
 
 # Create your views here.
-def index(request):
+def index(request):    
     return render(request,"index.html")
 
 
 def login(request):
     return render(request,"login.html")
 
-
 def registro(request):
     return render(request,"registro.html")
 
-def gustos(request):
+def gusto(request):
     return render(request,"gustos.html")
 
 def productos(request):
