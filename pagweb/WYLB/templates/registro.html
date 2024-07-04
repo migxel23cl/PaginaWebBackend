@@ -17,7 +17,7 @@
     <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
     <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña" autocomplete="current-password">
     <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-    <input class="botons" type="submit" value="Registrar">
+    <a href="{% url 'login' %}" id="register-button" class="register-button">Registrarse</a>
     <p><a href="{% url 'login' %}">¿Ya tengo Cuenta?</a></p>
   </form>
   <script src="{% static 'js/main.js'%}"></script>
