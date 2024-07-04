@@ -1,5 +1,5 @@
 
-$(document).ready(function () {
+/*$(document).ready(function () {
   $('#formularioRegistro').submit(function (e) {
     e.preventDefault();
 
@@ -33,10 +33,10 @@ $(document).ready(function () {
     $('#password').val('');
 
     window.location.href = "{% url 'login' %}";
-  });
+  });*/
 
 
-  $('#login-button').click(function () {
+  /*$('#login-button').click(function () {
     var username = $('#username').val();
     var password = $('#password').val();
 
@@ -49,9 +49,9 @@ $(document).ready(function () {
     } else {
       alert("Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.");
     }
-  });
+  });*/
 
-});
+//}); 
 
 $(document).ready(function () {
   // Array para almacenar los productos en el carrito
