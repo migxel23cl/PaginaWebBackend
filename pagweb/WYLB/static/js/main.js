@@ -103,13 +103,6 @@ $(document).ready(function () {
     window.location.href = "{% url 'ventanaPago' %}";
 
   });
-  $(document).ready(function () {
-  $('#btnapi').click(function () {
-
-    window.location.href = 'quepjeres.html';
-
-  });
-})
 
 $(document).ready(function () {
  //https://dragonball-api.com/api/characters/1

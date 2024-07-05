@@ -253,9 +253,16 @@ input[type="button"]:hover{
 }
 
 .botonpagar{
-    width: 200px;
-    margin-left: 50%;
-    margin-top: 20%;
+    margin-top: 25px;
+    color: white;
+    background: #535C91;
+    border: none;
+    border-radius: 20px; /* Valor alto para hacerlo redondo */
+    padding: 15px 30px; /* Ajusta el padding para aumentar el tamaño */
+    font-size: 18px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background 0.3s ease;
+
 }
 .card:hover{   
     box-shadow: 0px 0px 20px rgb(230, 10, 138); 
