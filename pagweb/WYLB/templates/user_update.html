@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="form-container">
+                    <h2>Formulario para Modificar</h2>
+                    <form action="{% url 'user_update' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="nombre" class="form-label">Nombres</label>
+                            <input type="text" value="{{ usuario.nombres }}" class="form-control" id="nombres" name="nombres">
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido" class="form-label">Apellido</label>
+                            <input type="text" value="{{ usuario.apellido }}" class="form-control" id="apellido" name="apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="correo" class="form-label">Correo</label>
+                            <input type="email" value="{{ usuario.email }}" class="form-control" id="correo" name="correo">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" value="{{ usuario.password }}" class="form-control" id="password" name="password">
+                        </div>
+                        {% if mensaje %}
+                        <div class="alert">
+                            {{ mensaje }}
+                        </div>
+                        {% endif %}
+                        <div class="form-actions">
+                            <button type="submit" class="btn">Modificar Registro</button>
+                            <a href="{% url 'crud' %}" class="btn-link">Volver</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

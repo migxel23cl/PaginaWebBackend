@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenedor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    <h2 class="title">Lista Usuarios</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Rut</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Modificar</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if usuarios %}
+                            {% for tmp in usuarios %}
+                            <tr>
+                                <td>{{ tmp.id }}</td>
+                                <td>{{ tmp.nombres }}</td>
+                                <td>{{ tmp.apeliidos }}</td>
+                                <td><a href="{% url 'user_findEdit' pk=tmp.id %}"><button class="btn">Modificar</button></a></td>
+                                <td><a href="{% url 'user_del' pk=tmp.id %}"><button class="btn">Eliminar</button></a></td>
+                            </tr>
+                            {% endfor %}
+                            {% endif %}
+                        </tbody>
+                    </table>
+                    {% if mensaje %}
+                    <div class="alert">
+                        {{ mensaje }}
+                    </div>
+                    {% endif %}
+                    <a href="{% url 'user_add' %}">
+                        <button class="btn">Agregar Registro</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
