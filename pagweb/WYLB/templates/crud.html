@@ -26,14 +26,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% if usuarios %}
+                            {% if usuario %}
                             {% for tmp in usuarios %}
                             <tr>
                                 <td>{{ tmp.id }}</td>
                                 <td>{{ tmp.nombres }}</td>
                                 <td>{{ tmp.apeliidos }}</td>
-                                <td><a href="{% url 'user_findEdit' pk=tmp.id %}"><button class="btn">Modificar</button></a></td>
-                                <td><a href="{% url 'user_del' pk=tmp.id %}"><button class="btn">Eliminar</button></a></td>
+                                <td><a href="{% url 'user_findEdit' pk=tmp.id %}"><button class="btn-mod">Modificar</button></a></td>
+                                <td><a href="{% url 'user_del' pk=tmp.id %}"><button class="btn-eli">Eliminar</button></a></td>
                             </tr>
                             {% endfor %}
                             {% endif %}
@@ -44,7 +44,7 @@
                         {{ mensaje }}
                     </div>
                     {% endif %}
-                    <a href="{% url 'user_add' %}">
+                    <a href="{% url 'registro' %}">
                         <button class="btn">Agregar Registro</button>
                     </a>
                 </div>
