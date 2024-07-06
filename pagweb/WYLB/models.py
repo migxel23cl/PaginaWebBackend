@@ -19,4 +19,18 @@ class Usuario(models.Model):
             + " "
             + str(self.apellido)
         )
-      
+
+class Producto(models.Model):
+    id_producto = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=20, null=False, blank=False)
+    descripcion = models.TextField(null=False, blank=False)
+    precio = models.IntegerField(null=False, blank=False)
+    rutaImg1 = models.CharField(max_length=100, null=False, blank=False)
+
+    def __str__(self):
+        return (
+            "nombre: " +
+            str(self.nombre)
+            + ", precio: $"
+            + str(self.precio)
+        )

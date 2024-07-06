@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import Usuario
+from .models import Usuario, Producto
 from django.contrib.auth.hashers import check_password
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+#from .forms import ProductoForm
+
 
 # Create your views here.
 def index(request):    
@@ -137,6 +139,23 @@ def conectar(request):
 
         }
         return render(request,"login.html",context)
+    
+
+
+def product_list(request):
+    products = Producto.objects.all()
+    return render(request, 'product_list.html', {'products': products})
+
+
+def add_product(request):
+    if request.method == 'POST':
+        form = ProductoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('product_list')
+    else:
+        form = ProductoForm()
+    return render(request, 'add_product.html', {'form': form})
 
 
 
