@@ -34,3 +34,21 @@ class Producto(models.Model):
             + ", precio: $"
             + str(self.precio)
         )
+
+class Pedido(models.Model):
+    ESTADO_CHOICES = [
+        ('pendiente', 'Pendiente'),
+        ('procesando', 'Procesando'),
+        ('completado', 'Completado'),
+        ('cancelado', 'Cancelado'),
+    ]
+
+    cliente = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField()
+    precio_total = models.DecimalField(max_digits=10, decimal_places=2)
+    estado = models.CharField(max_length=20, choices=ESTADO_CHOICES, default='pendiente')
+    #fecha_pedido = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f'Pedido {self.id} - {self.cliente.username}'

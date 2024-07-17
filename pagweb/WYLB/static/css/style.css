@@ -222,6 +222,7 @@ input[type="button"]:hover{
     flex: auto;
     margin: left;
     margin-top: 20px;
+    background-color: #1B1A55;
 }
 
 .botoncarrito{
@@ -483,4 +484,27 @@ p{
     cursor: pointer;
     border-radius: 4px;
     font-size: 1em;
+}
+
+.btncomprar{
+    width: 400px;
+    flex: auto;
+    margin: left;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.custom-button {
+    background-color: #007bff; /* Color de fondo */
+    border-color: #007bff;    /* Color del borde */
+    color: white;             /* Color del texto */
+    font-size: 1.25rem;       /* Tamaño de fuente */
+    padding: 0.75rem 1.25rem; /* Espaciado interno */
+    border-radius: 0.3rem;    /* Bordes redondeados */
+    transition: background-color 0.3s, border-color 0.3s; /* Transiciones para el hover */
+}
+
+.custom-button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+    border-color: #0056b3;    /* Color del borde al pasar el mouse */
 }

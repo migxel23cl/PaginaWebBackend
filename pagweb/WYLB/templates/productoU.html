@@ -67,7 +67,12 @@
             </button>
           </div>
           <div class="tituloproU"><h1 id="product-name">Figura de accion Goku SSJ 3</h1></div>
-          <div class="botoncomprar"><input type="button" value="Comprar" id="btnpagodirecto"></div>
+          <div class="botoncomprar">
+            <a href="{% url 'ventanaPago' %}">
+                <button class="btn btn-primary custom-button" type="button" id="btnpagodirecto">Comprar</button>
+            </a>
+        </div>
+        
           <div class="botoncarrito"><input id="cart-button" type="button" value="Agregar Carrito"></div>
           <div class="costepro"><h1 id="product-price">$$$$$$</h1>
           </div>

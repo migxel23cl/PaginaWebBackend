@@ -25,5 +25,7 @@ urlpatterns=[
     path('productoU/',views.productoU, name="productoU"),
     path('perfil/',views.perfil, name="perfil"),
     path('ventanaPago/',views.ventanaPago, name="ventanaPago"),
-    path('crearproducto/',crear_producto, name="crear_producto")
+    path('crearproducto/',crear_producto, name="crear_producto"),
+    path('producto/<int:id>/', views.producto_detalle, name='producto_detalle'),
+     path('pedidos-pendientes/', views.pedidos_pendientes, name='pedidos_pendientes'),
 ]

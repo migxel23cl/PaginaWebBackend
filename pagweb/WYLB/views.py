@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Usuario, Producto
+from .models import Usuario, Producto, Pedido
 from django.contrib.auth.hashers import check_password
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
@@ -152,3 +152,14 @@ def crear_producto(request):
     else:
         form = ProductoForm()
     return render(request, 'crear_producto.html', {'form': form})
+
+def producto_detalle(request, id):
+    producto = Producto.objects.get(id=id)
+    return render(request, 'producto_detalle.html', {'producto': producto})
+
+def pedidos_pendientes(request):
+    pedidos = Pedido.objects.filter(estado='pendiente')  # Ajusta según el campo de estado de tu modelo
+    context = {
+        'pedidos': pedidos,
+    }
+    return render(request, 'pedidos_pendientes.html', context)

@@ -19,11 +19,11 @@
       <form action="#" method="post">
 
         <h1 class="h1pago">Payment form</h1>
-
+        {% csrf_token %}
         <section>        
           <label for="cc-number">Card number</label>
           <!-- Allow for spaces and for shorter and longer payment card numbers -->
-          <input id="cc-number" name="cc-number" autocomplete="cc-number" inputmode="numeric" maxlength="50" pattern="[\d ]{10,30}" required>
+          <input id="cc-number" name="cc-number" autocomplete="cc-number" inputmode="numeric" maxlength="50"required>
         </section>
 
         <section>        
@@ -43,7 +43,13 @@
           </div>
         </section>  
 
-        <button id="complete-payment">Complete payment</button>
+        <button id="complete-payment" class="btn btn-primary">Complete payment</button>
+
+        <script>
+            document.getElementById('complete-payment').addEventListener('click', function() {
+                window.location.href = "{% url 'pedidos_pendientes' %}";
+            });
+        </script>
         
         <p>NB: data entered in this form is not stored or shared.</p>
 

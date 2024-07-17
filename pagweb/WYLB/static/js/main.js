@@ -92,11 +92,6 @@ $(document).ready(function () {
     bsOffcanvas.show();
   });
 
-  $('#btnpagodirecto').click(function () {
-
-    window.location.href = "ventanaPago.html";
-
-  });
 
   $('#pagarcarrito').click(function () {
 
@@ -122,7 +117,14 @@ btnIrMercado.addEventListener('click', function() {
 
 
 
-
+    document.addEventListener('DOMContentLoaded', function() {
+      const btnPagoDirecto = document.getElementById('btnpagodirecto');
+  
+      btnPagoDirecto.addEventListener('click', function() {
+          window.location.href = 'ventanaPago/';  // Asegúrate de que esta URL coincida con la URL correcta para la vista ventanaPago
+      });
+  });
+  
 
 
 
