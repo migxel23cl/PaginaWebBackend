@@ -412,3 +412,75 @@ p{
     border-color: #535C91;
     color: white;
 }
+
+
+.agregarfondo{
+    margin-top: 25px;
+    color: white;
+    background: #535C91;
+    border: none;
+    border-radius: 20px; /* Valor alto para hacerlo redondo */
+    padding: 15px 30px; /* Ajusta el padding para aumentar el tamaño */
+    font-size: 18px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background 0.3s ease;
+
+}
+.profile-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.profile-info {
+    margin-bottom: 20px;
+}
+.profile-info h2 {
+    margin: 10px 0;
+    font-size: 2em;
+}
+.profile-info p {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.profile-info .balance {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #535C91;
+}
+
+.bodyperfil{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.botonesperfil {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.botonesperfil {
+    background-color: #1B1A55;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+}

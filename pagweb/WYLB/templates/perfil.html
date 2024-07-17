@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="bodyperfil">
+    <div class="profile-container">
+        <img src="{% static 'img/fotoperfilweb.png' %}" alt="Foto de Perfil" class="profile-picture">
+        <div class="profile-info">
+            <h2>Nombre del Usuario</h2>
+            <p>Dirección del Usuario</p>
+            <p class="balance">Saldo: $100.00</p>
+        </div>
+
+        <div class="botonesperfil">
+            <div class="agregarfondo"><a href="{% url 'ventanaPago' %}"><button class="btnfondos" type="button">Agregar Fondos</button></a></div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/main.js'%}"></script>
+</body>
+</html>

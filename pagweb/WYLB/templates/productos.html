@@ -11,7 +11,8 @@
   <nav class="navbar bg-body-secondary">
         <div class="container">
           <a class="navbar-brand" href="#">
-            <img src="https://c0.klipartz.com/pngpicture/722/101/gratis-png-iconos-de-computadora-perfil-de-usuario-circulo-abstracto.png" alt="Bootstrap" width="30" height="24">
+            <a href="{% url 'perfil' %}">
+              <img src="https://c0.klipartz.com/pngpicture/722/101/gratis-png-iconos-de-computadora-perfil-de-usuario-circulo-abstracto.png" alt="Perfil" class="profile-img" width="50">
             <a class="navbar-brand1"><a href="{% url 'feed' %}">FEED</a></a>
             <a class="navbar-brand2"><a href="{% url 'productos' %}">MERCADO</a></a>
           <a><button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">🛒</button>
@@ -114,23 +115,22 @@
   </div>
   <div class="container mt-5">
     <div class="row">
-      {% for product in products %}
-      <div class="col-4"> 
-        <div class="card border-0">
-          <img src="{{ product.rutaImg1 }}" class="card-img-top" alt="{{ product.nombre }}" height="200">
-          <div class="card-body">
-            <h5 class="card-title">{{ product.nombre }}</h5>
-            <p class="card-text">{{ product.descripcion }}</p>
-            <p class="card-text">Price: ${{ product.precio }}</p>
-            <a href="#" class="btn btn-primary">Ir Producto</a>
-          </div>
+        {% for product in products %}
+        <div class="col-4"> 
+            <div class="card border-0">
+                <img src="{{ product.rutaImg1 }}" class="card-img-top" alt="{{ product.nombre }}" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.nombre }}</h5>
+                    <p class="card-text">{{ product.descripcion }}</p>
+                    <p class="card-text">Price: ${{ product.precio }}</p>
+                    <a href="#" class="btn btn-primary">Ir Producto</a>
+                </div>
+            </div>
         </div>
-      </div>
-      {% endfor %}
+        {% endfor %}
     </div>
-  </div>
 </div>
-        </main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

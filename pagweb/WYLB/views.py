@@ -4,6 +4,7 @@ from django.contrib.auth.hashers import check_password
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from .forms import ProductoForm
 #from .forms import ProductoForm
 
 
@@ -19,29 +20,7 @@ def login(request):
     return render(request,"login.html")
 
 def registro(request):
-    if request.method != "POST":
-        context = {
-        }
-        return render(request, "registro.html", context)
-    else:
-        nombre = request.POST["nombres"]
-        apellido = request.POST["apellido"]
-        correo = request.POST["correo"]
-        password = request.POST["password"]
-
-
-
-        obj = Usuario.objects.create(
-            nombre=nombre,
-            apellido=apellido,
-            email=correo,
-            password=password,
-        )
-        obj.save()
-        context = {
-            "mensaje": "Registro Exitoso",
-        }
-        return render(request, "registro.html", context)
+        return render(request, "registro.html",)
     
 
 def crud(request):
@@ -55,8 +34,6 @@ def crud(request):
 def gusto(request):
     return render(request,"gustos.html")
 
-def productos(request):
-    return render(request,"productos.html")
 
 def feed(request):
     return render (request,"feed.html")
@@ -159,5 +136,19 @@ def add_product(request):
 
 
 
+def perfil(request):
+    return render(request, "perfil.html")
 
+def lista_productos(request):
+    products = Producto.objects.all()
+    return render(request, 'productos.html', {'products': products})
 
+def crear_producto(request):
+    if request.method == 'POST':
+        form = ProductoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('productos')
+    else:
+        form = ProductoForm()
+    return render(request, 'crear_producto.html', {'form': form})
